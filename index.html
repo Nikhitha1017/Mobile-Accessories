@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  XXXXXX </title>
+  <title>Mobile Accessories Store</title>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,11 +18,10 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
       background-color: #f4f4f4;
     }
     header {
-      background-color: #333;
+      background-color: #222;
       color: white;
       padding: 15px;
       text-align: center;
@@ -29,7 +29,12 @@
     .container {
       padding: 20px;
     }
-    .book {
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .product {
       background: white;
       padding: 15px;
       margin: 10px 0;
@@ -42,35 +47,78 @@
       border: none;
       cursor: pointer;
     }
+    button:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1> XXXXXXXXX </h1>
+  <h1>📱 Trending Mobile Accessories</h1>
 </header>
+
 <div class="container">
-  <div class="XXXX">
-    <h2>XXXXX</h2>
-    <p>Price: ₹0</p>
-    <button onclick="trackClick()">Buy Now</button>
+
+  <!-- Phone Protection -->
+  <h2>Phone Protection</h2>
+
+  <div class="product">
+    <h3>Silicone Phone Case</h3>
+    <p>Price: ₹299</p>
+    <button onclick="trackClick('Silicone Phone Case',299)">Buy Now</button>
   </div>
-  <div class="XXXX">
-    <h2>XXXXX </h2>
-    <p>Price: ₹0</p>
-    <button onclick="trackClick()">Buy Now</button>
+
+  <div class="product">
+    <h3>Tempered Glass Screen Protector</h3>
+    <p>Price: ₹199</p>
+    <button onclick="trackClick('Screen Protector',199)">Buy Now</button>
   </div>
+
+  <!-- Charging Accessories -->
+  <h2>Charging Essentials</h2>
+
+  <div class="product">
+    <h3>Fast Charger 20W</h3>
+    <p>Price: ₹499</p>
+    <button onclick="trackClick('Fast Charger',499)">Buy Now</button>
+  </div>
+
+  <div class="product">
+    <h3>Power Bank 10000mAh</h3>
+    <p>Price: ₹999</p>
+    <button onclick="trackClick('Power Bank',999)">Buy Now</button>
+  </div>
+
+  <!-- Audio -->
+  <h2>Audio Accessories</h2>
+
+  <div class="product">
+    <h3>Wireless Earbuds</h3>
+    <p>Price: ₹1299</p>
+    <button onclick="trackClick('Wireless Earbuds',1299)">Buy Now</button>
+  </div>
+
+  <div class="product">
+    <h3>Bluetooth Speaker</h3>
+    <p>Price: ₹1499</p>
+    <button onclick="trackClick('Bluetooth Speaker',1499)">Buy Now</button>
+  </div>
+
 </div>
 
 <script>
-  function trackClick() {
+  function trackClick(productName, price) {
     gtag('event', 'purchase_click', {
-      event_category: 'engagement',
-      event_label: 'Buy Button Click'
+      event_category: 'ecommerce',
+      event_label: productName,
+      value: price
     });
-    alert("Button Click Tracked!");
+
+    alert(productName + " clicked!");
   }
 </script>
+
 </body>
 </html>
-
